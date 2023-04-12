@@ -1,0 +1,5 @@
+<div *ngFor="let comment of comments">
+    <fed-comment-item [comment]="comment"></fed-comment-item>
+</div>
+<br>
+<button class="btn btn-success" (click)="openModal()">Add new comment</button>

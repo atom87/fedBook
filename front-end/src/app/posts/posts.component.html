@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-2">
+        <img src="assets/images/{{post.user['picture']}}" width="100%">
+        <div class="row">
+            <div class="col">
+                <b>{{post.user['name']}}</b>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                {{post.date | date: "H:mm, d. MMMM yyyy"}}
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="col-5">
+        <ngb-tabset type="tabs|pills">
+            <ngb-tab title="Posts">
+                <ng-template ngbTabContent>
+                    {{post.text}}
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Comments">
+                <ng-template ngbTabContent>
+                    <div class="col-md-12">
+                        <fed-comments [id]="post._id"></fed-comments>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<form #forma = "ngForm" novalidate>
+    <textarea name="comment" cols="30" rows="10" class="form-control" placeholder="Write comment..." [(ngModel)]="newComment.text" #text= "ngModel" required></textarea>
+    <br>
+    <label>This field is required!</label>
+    <br>
+    <button class="btn btn-primary" type="submit" (click)="addComment()" [disabled]="forma.form.invalid"
+    >Save comment</button>
+
+</form>

@@ -1,0 +1,7 @@
+<div *ngFor="let post of postlist?.posts">
+    <fed-posts [post]="post"></fed-posts>
+</div>
+
+<button class="btn btn-primary" (click)="loadMore()"
+*ngIf= "params.pageSize <= postlist?.posts.length"
+>Load more...</button>
